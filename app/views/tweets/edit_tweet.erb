@@ -1,0 +1,15 @@
+<h1>Edit Tweet</h1>
+
+#forms are how users submit information 
+#action is the url something goes to and method says what HTTP verb 
+#for PATCH and DELETE, the form method has to be "POST" but we add 
+#the "hidden" id and type to an input line right below 
+#< % = lets you use ruby code and show it to the user. 
+
+<form action="/tweets/<%=@tweet.id%>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+  <input type="text" name="content" value="<%=@tweet.content%>">
+
+  <input type="submit" value="submit">
+</form>
